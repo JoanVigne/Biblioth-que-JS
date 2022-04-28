@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main>
+        <input class="numberInput" type="text">
+        <p></p>
+        <script>
+
+            const input = document.querySelector('.numberInput');
+            const para = document.querySelector('p');
+
+            function squared(num) {
+                return num * num;
+            }
+            function cubed(num) {
+                return num * num * num;
+            }
+            function factorial(num) {
+                var x = num;
+                while (x > 1) {
+                    num *= x - 1;
+                    x--;
+                }
+                return num;
+            }
+            function double(num) {
+                return Number(num) + Number(num);
+            }
+            function perimetre(num) {
+                return 2 * Math.PI * num;
+            }
+
+            input.onchange = function () {
+                var num = input.value;
+                if (isNaN(num)) {
+                    para.textContent = 'You need to enter a number!';
+                } else {
+                    para.innerHTML = num + ' squared is ' + squared(num) + '.<br> ' +
+                        num + ' cubed is ' + cubed(num) + '. <br>' +
+                        num + ' factorial is ' + factorial(num) + '. <br>' +
+                        num + ' doubled is ' + double(num) + '. <br>' +
+                        ' un cercle de ' + num + 'cm de rayon a pour périmètre ' + perimetre(num) + '.<br>';
+                }
+            }
+        </script>
+    </main>
+
+</body>
+
+</html>
